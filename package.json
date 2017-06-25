@@ -1,0 +1,12 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "mradul pandey",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.0.0"
+  }
+}
