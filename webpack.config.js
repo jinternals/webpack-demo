@@ -1,4 +1,5 @@
 var path 						= require("path");
+var webpack 					= require('webpack');
 var HtmlWebpackPlugin 			= require('html-webpack-plugin');
 var CleanWebpackPlugin 			= require('clean-webpack-plugin');
 var DashboardPlugin 			= require('webpack-dashboard/plugin');
@@ -21,8 +22,8 @@ module.exports = {
         index: './index.js'	
     },
   output: {
-      filename: '[name].js',
-      sourceMapFilename: '[name].map',
+      filename: '[name].[chunkhash].js',
+      sourceMapFilename: '[name].[chunkhash].map',
       path: PATHS.appDistPath
   },
   module: {
@@ -31,6 +32,11 @@ module.exports = {
         ]
   },
   plugins: [
+   new webpack.optimize.CommonsChunkPlugin({ 
+                name: 'vendor', 
+                filename: 'vendor.[chunkhash].js', 
+                minChunks: Infinity 
+    }),
     new DashboardPlugin(),
     new CleanWebpackPlugin([PATHS.appDistPath]),
   	new HtmlWebpackPlugin({ template: './index.html', inject: 'body' }),
