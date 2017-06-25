@@ -1,18 +1,29 @@
 var path 						= require("path");
 var HtmlWebpackPlugin 			= require('html-webpack-plugin');
 var CleanWebpackPlugin 			= require('clean-webpack-plugin');
+var DashboardPlugin 			= require('webpack-dashboard/plugin');
+var OpenBrowserWebpackPlugin 	= require('open-browser-webpack-plugin');
 
 const PATHS = {
     appSourcePath: path.resolve(__dirname, './app/'),
     appDistPath: path.resolve(__dirname, './dist/')
 };
 
+const DEV_SERVER_CONFIG = {
+    port:8081
+};
+
 module.exports = {
+  devtool: 'inline-source-map',
   context: PATHS.appSourcePath,	
-  entry: './index.js',
+  entry:{
+        vendor: ['lodash' ],
+        index: './index.js'	
+    },
   output: {
-    filename: 'bundle.js',
-    path: PATHS.appDistPath
+      filename: '[name].js',
+      sourceMapFilename: '[name].map',
+      path: PATHS.appDistPath
   },
   module: {
         loaders: [
@@ -20,7 +31,12 @@ module.exports = {
         ]
   },
   plugins: [
+    new DashboardPlugin(),
     new CleanWebpackPlugin([PATHS.appDistPath]),
   	new HtmlWebpackPlugin({ template: './index.html', inject: 'body' }),
-  ]
+  	new OpenBrowserWebpackPlugin({ url: 'http://localhost:' + DEV_SERVER_CONFIG.port })
+  ],
+  devServer: {
+            port: DEV_SERVER_CONFIG.port,
+  }
 };

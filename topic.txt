@@ -7,3 +7,7 @@
  			so that it can be added to your dependency graph.
  Plugin:    Plugins are mostly used performing actions and 			   	   
  			custom functionality on "compilations" or "chunks" of your bundled modules.
+
+
+#DashboardPlugin
+#OpenBrowserWebpackPlugin

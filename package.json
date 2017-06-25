@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js"
   },
   "keywords": [],
   "author": "mradul pandey",
@@ -13,8 +14,10 @@
     "babel-loader": "^7.1.0",
     "clean-webpack-plugin": "^0.1.16",
     "html-webpack-plugin": "^2.29.0",
+    "open-browser-webpack-plugin": "0.0.5",
     "path": "^0.12.7",
-    "webpack": "^3.0.0"
+    "webpack": "^3.0.0",
+    "webpack-dashboard": "^0.4.0"
   },
   "dependencies": {
     "lodash": "^4.17.4"
