@@ -1,0 +1,9 @@
+ Get Started:-
+
+ Entry:  	The starting point of this graph is known as an entry point. 
+ Output: 	Where to bundle your application.
+ Loaders:   Have all required files in your poject(webpack only understands JavaScript)
+ 			Identify files should be transformed by a certain loader and transform them
+ 			so that it can be added to your dependency graph.
+ Plugin:    Plugins are mostly used performing actions and 			   	   
+ 			custom functionality on "compilations" or "chunks" of your bundled modules.
