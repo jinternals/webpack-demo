@@ -1,12 +1,9 @@
-import _ from 'lodash';
+import dep1 from './dep-1';
 
-function component() {
+function getComponent () {
   var element = document.createElement('div');
-
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
+  element.innerHTML = dep1();
   return element;
 }
 
-document.body.appendChild(component());
+document.body.appendChild(getComponent());
