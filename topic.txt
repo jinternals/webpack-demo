@@ -1,3 +1,4 @@
 #webpack Dev Server
+* Automatic Refresh: Iframe mode , Inline mode(both the support Hot Module Replacement)
 #webpack DashboardPlugin
 #webpack OpenBrowserWebpackPlugin
