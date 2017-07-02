@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "prestart": "npm install",
     "start": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js"
   },
   "keywords": [],

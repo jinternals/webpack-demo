@@ -7,4 +7,5 @@ function getComponent () {
   return element;
 }
 
+
 document.body.appendChild(getComponent());
