@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "cross-env ENV=BUILD webpack --config webpack.config.js",
+    "dist": "cross-env ENV=DIST webpack --config webpack.config.js",
     "prestart": "npm install",
-    "start": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.js"
+    "start": "cross-env ENV=DEV webpack-dashboard -- webpack-dev-server --config ./webpack.config.js"
   },
   "keywords": [],
   "author": "mradul pandey",
@@ -13,8 +14,11 @@
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
+    "chalk": "^2.0.1",
     "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^5.0.1",
     "html-webpack-plugin": "^2.29.0",
+    "lodash": "^4.17.4",
     "open-browser-webpack-plugin": "0.0.5",
     "path": "^0.12.7",
     "webpack": "^3.0.0",
