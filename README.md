@@ -5,7 +5,7 @@
 
 Webpack is a module bundler for modern JavaScript applications. It puts all of your assets, including js, images, fonts, css and etc. in a dependency graph and bundle them so that they can shipped with your application.
 
-It provides fundamental solution web application problems:
+It provides fundamental solutions for web application requirement:
 * transpile
 * combine
 * minify and uglify
@@ -16,14 +16,14 @@ It provides fundamental solution web application problems:
 
 ## Configuration: 
 
-Entry:  		The starting point of the dependency graph is known as an entry point. 
+Entry:  	The starting point of the dependency graph is known as an entry point. 
 
 Output: 	Where to bundle your application.
 
 Loaders:   	Process all required files in your project so that these files can be added to 
 dependency graph(webpack only understands JS).
 	    	
-Plugin:    	Plugins are mostly used performing actions and custom functionality on 
+Plugin:    	Plugins are mostly used for performing actions and custom functionality on 
 "compilations" or "chunks" of your bundled modules.
 
 
